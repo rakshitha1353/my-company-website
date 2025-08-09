@@ -432,6 +432,28 @@
                 transform: translateY(-8px) rotate(-45deg);
             }
         }
+
+        /* Blog Card CSS - Correctly placed in the <head> */
+        .blog-card {
+            display: block;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--dark-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 2rem;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .blog-card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -570,17 +592,16 @@
             </div>
         </section>
 
-    <section id="blog">
-    <div class="container">
-        <h2 class="section-heading">Our Blog</h2>
-        <p>Stay up to date with the latest news and insights from Radhakriti Tech Solution. Our blog features articles on AI advancements, industry trends, and our latest projects.</p>
-        
-        <a href="tech-solution-overview.md">
-            <h3>Radhakriti Tech Solution: Comprehensive Overview</h3>
-        </a>
-
-    </div>
-</section>
+        <section id="blog">
+            <div class="container">
+                <h2 class="section-heading">Our Blog</h2>
+                <p>Stay up to date with the latest news and insights from Radhakriti Tech Solution. Our blog features articles on AI advancements, industry trends, and our latest projects.</p>
+                
+                <a href="tech-solution-overview.md" class="blog-card">
+                    <h3>Radhakriti Tech Solution: Comprehensive Overview</h3>
+                </a>
+            </div>
+        </section>
 
         <section id="careers">
             <div class="container">

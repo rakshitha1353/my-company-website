@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radhakriti Tech Solution - Pioneering the Next Wave of AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --dark-blue: #0A192F;
+            --gradient-start: #0c1a40;
+            --gradient-end: #1a437f;
+            --light-blue: #4A90E2;
+            --accent-blue: #007bff;
+            --white: #FFFFFF;
+            --off-white: #f0f8ff;
+            --text-dark: #333;
+            --text-light: #A8B2D1;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            font-family: var(--body-font);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: fixed;
+            width: 100%;
+            background-color: var(--dark-blue);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info, .social-icons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .contact-info span, .social-icons a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--light-blue);
+        }
+
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: var(--body-font);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--light-blue);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--white);
+        }
+
+        #home {
+            position: relative;
+            padding-top: 150px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            overflow: hidden;
+            background-color: var(--dark-blue); 
+        }
+
+        /* Animation for hero text */
+        .home-subtitle, .hero-title, .hero-text, .hero-button {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .home-subtitle { animation-delay: 0.5s; }
+        .hero-title { animation-delay: 1s; }
+        .hero-text { animation-delay: 1.5s; }
+        .hero-button { animation-delay: 2s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        #home .container {
+            z-index: 10;
+        }
+        
+        .home-subtitle {
+            color: var(--light-blue);
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+            color: var(--off-white);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-button {
+            background-color: var(--light-blue);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        .hero-button:hover {
+            background-color: var(--accent-blue);
+            transform: scale(1.02);
+        }
+
+        section {
+            padding: 100px 0;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* General section styling */
+        #about, #services, #projects, #careers, #contact, #blog, #faq, #request-demo {
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        #newsletter {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+        }
+
+        #newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        #newsletter-form input {
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid var(--white);
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        #newsletter-form button {
+            padding: 1rem 2rem;
+            background-color: var(--light-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #newsletter-form button:hover {
+            background-color: var(--accent-blue);
+        }
+        
+        h2.section-heading {
+            font-size: clamp(26px, 5vw, 32px);
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        #faq h2.section-heading, #request-demo h2.section-heading {
+            text-align: center;
+            display: block;
+        }
+
+        #newsletter h2.section-heading {
+            color: var(--white);
+        }
+
+        .about-content, .service-grid, .project-grid, .career-grid, .faq-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background-color: #f7f7f7;
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--dark-blue);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        
+        .card ul {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        #careers .card {
+            background-color: var(--light-blue);
+            color: var(--white);
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        #careers .card h3 {
+            color: var(--white);
+        }
+
+        #careers .card p, #careers .card ul {
+            color: var(--off-white);
+        }
+
+        #careers .card strong {
+            color: var(--white);
+        }
+        
+        #contact-form, #request-demo-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #contact-form input, #contact-form textarea, #request-demo-form input, #request-demo-form textarea {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            color: var(--text-dark);
+            font-family: var(--body-font);
+        }
+        
+        #contact-form button, #request-demo-form button {
+            background-color: var(--light-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: var(--body-font);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-form button:hover, #request-demo-form button:hover {
+            background-color: var(--accent-blue);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-family: var(--body-font);
+            color: var(--white);
+            font-size: 0.8rem;
+            background-color: var(--dark-blue);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-top {
+                display: none;
+            }
+            header {
+                padding: 1rem 2rem;
+            }
+            .header-bottom {
+                padding: 0;
+            }
+            nav ul {
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: var(--dark-blue);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+                padding-top: 2rem;
+            }
+            nav ul.active {
+                left: 0;
+            }
+            nav ul li {
+                margin: 2.5rem 0;
+            }
+            .header-button {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> founders.radhakriti@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +91 999 888 7777</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="header-bottom container">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0tNlK8t6W8y8Y0iJ8bQ_iJ7fB1L-u-q-6g&s" alt="Logo">
+                Radhakriti Tech Solution
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <p class="home-subtitle">Pioneering IT SOLUTIONS</p>
+                <h1 class="hero-title">Excellent IT services<br>for your success</h1>
+                <p class="hero-text">We are a leading Technology Solutions Providing Company all over the world with cutting-edge AI.</p>
+                <a href="#request-demo" class="hero-button">Request a Demo</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-heading">About Us</h2>
+                <div class="about-content">
+                    <div>
+                        <p>Founded as an early-stage, bootstrapped startup, Radhakriti Tech Solution is currently in stealth mode, dedicated to pioneering the next generation of Artificial Intelligence. We specialize in cutting-edge <strong>Generative AI (GenAI)</strong> and are actively engaged in research and development for <strong>Strong Artificial Intelligence</strong>.</p>
+                        <p>Our vision is to become a globally recognized leader in AI-driven solutions. We aim to empower businesses and organizations with intelligent automation and data-driven innovation, driving transformative growth and unparalleled efficiency.</p>
+                        <p>Our mission is to conceptualize, develop, and deploy groundbreaking intelligent systems. These systems are designed to transcend current GenAI capabilities, enabling us to unlock entirely new frontiers of possibility for our clients. The company is led by its initial Co-founder, an experienced software architect and product leader focused on creating and deploying advanced AI applications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-heading">Our Advanced Services</h2>
+                <div class="service-grid">
+                    <div class="card">
+                        <h3>Custom Generative AI Application Development</h3>
+                        <p>We engineer bespoke Generative AI solutions that extend far beyond standard models. These are highly specialized, performant, and deeply integrated AI systems designed to achieve outcomes conventional tools cannot.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pioneering Futuristic & Strong AI Concepts</h3>
+                        <p>We commit to fundamental R&D, integrating experimental and advanced AI models that exhibit characteristics approaching Artificial General Intelligence (AGI). This involves deep dives into meta-learning, causal inference, and highly autonomous systems.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Intelligent Agent Development & Orchestration</h3>
+                        <p>We construct sophisticated "Agentic AI" solutions – autonomous entities capable of performing multi-step tasks, engaging in long-term planning, dynamic tool use, and complex decision-making.</p>
+                    </div>
+                    <div class="card">
+                        <h3>AI Data Strategy & Management</h3>
+                        <p>Our expertise encompasses architecting sophisticated data pipelines, managing vast arrays of embeddings, and building advanced vector stores to enable dynamic knowledge graphs and contextual reasoning engines.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Full-Stack AI Deployment & MLOps</h3>
+                        <p>We establish cutting-edge MLOps practices for deploying, monitoring, and maintaining entire autonomous AI systems in production, including automated model discovery and self-healing deployment pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-heading">Illustrative Projects</h2>
+                <div class="project-grid">
+                    <div class="card">
+                        <h3>Autonomous Cognitive Assistant for Strategic Enterprise Decision-Making</h3>
+                        <p>A "Cognitive Digital Twin" of an enterprise's strategic environment, an agentic AI system that ingests and synthesizes vast internal and external data to provide proactive, context-aware recommendations and risk assessments.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Proactive & Self-Healing Cyber-Defense Agent Network</h3>
+                        <p>An intelligent network of AI agents that continuously monitor a digital ecosystem to autonomously detect anomalies, predict attack vectors, and deploy real-time countermeasures, learning from every interaction.</p>
+                    </div>
+                    <div class="card">
+                        <h3>AI-Powered Personal Research & Knowledge Synthesis Engine</h3>
+                        <p>An advanced Retrieval Augmented Generation (RAG) system combined with a dynamic knowledge graph to ingest documents, web content, and multimedia to answer complex queries, generate reports, and identify contradictions in information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-heading">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="card">
+                        <h3>What types of AI solutions do you provide?</h3>
+                        <p>We specialize in custom Generative AI, Intelligent Agents, Strong AI research, and full-stack MLOps to deploy and manage autonomous AI systems for our clients.</p>
+                    </div>
+                    <div class="card">
+                        <h3>How can your AI solutions help my business?</h3>
+                        <p>Our solutions are designed to automate complex tasks, provide data-driven insights, improve decision-making, and create transformative growth opportunities that conventional tools cannot offer.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Is my data secure with your AI systems?</h3>
+                        <p>Yes, we prioritize data security and privacy. Our MLOps practices include robust security protocols and monitoring to ensure your data and intellectual property are protected throughout the entire lifecycle of our solutions.</p>
+                    </div>
+                    <div class="card">
+                        <h3>What is the typical development process?</h3>
+                        <p>We start with a discovery phase to understand your needs, followed by R&D, model development, and a rigorous MLOps deployment pipeline. We maintain close collaboration and communication throughout the process to ensure alignment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2 class="section-heading">Our Blog</h2>
+                <p>Stay up to date with the latest news and insights from Radhakriti Tech Solution. Our blog features articles on AI advancements, industry trends, and our latest projects.</p>
+                </div>
+        </section>
+
+        <section id="careers">
+            <div class="container">
+                <h2 class="section-heading">Join Our Team</h2>
+                <div class="career-grid">
+                    <div class="card">
+                        <h3>Ready to shape the future of AI?</h3>
+                        <p>At Radhakriti Tech Solution, we are pioneers building the next generation of intelligent systems. We are looking for passionate innovators who are eager to contribute to our mission and help us push the boundaries of technology. Join us and make a real impact on the future of AI.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Senior AI/ML Engineer</h3>
+                        <p>We are seeking a talented Senior AI/ML Engineer to join our team. You will be responsible for designing and implementing advanced machine learning models, working on our core Generative AI projects, and helping to shape our technical roadmap.</p>
+                        <p><strong>Responsibilities:</strong></p>
+                        <ul>
+                            <li>Develop and deploy advanced machine learning models.</li>
+                            <li>Collaborate with the team to define project goals and requirements.</li>
+                            <li>Perform data analysis and feature engineering.</li>
+                            <li>Stay up-to-date with the latest AI research and technologies.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="request-demo">
+            <div class="container">
+                <h2 class="section-heading">Request a Demo</h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">Ready to see how our AI solutions can transform your business? Fill out the form below to schedule a personalized demonstration with our team.</p>
+                <form id="request-demo-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="company" placeholder="Company Name" required>
+                    <textarea name="message" rows="7" placeholder="Tell us about your needs..." required></textarea>
+                    <button type="submit">Schedule a Demo</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-heading" style="text-align: center; display: block;">Get In Touch</h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">We are open to discussing partnerships, investment opportunities, or the co-founder role. Please reach out to us with any general inquiries.</p>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <section id="newsletter">
+        <div class="container">
+            <h2 class="section-heading">Join Our Newsletter</h2>
+            <p>Stay up-to-date with our latest AI insights, company news, and technological advancements.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Radhakriti Tech Solution. All Rights Reserved.</p>
+            
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-menu a").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

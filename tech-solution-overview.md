@@ -12,19 +12,19 @@ Radhakriti Tech Solution is an early-stage, bootstrapped startup operating in "s
 
 The company focuses on creating the next generation of intelligent systems, not just products. Key services include:
 
--   **Custom Generative AI Application Development:** Engineering bespoke GenAI solutions that are highly specialized and deeply integrated, using custom fine-tuning and proprietary data strategies.
--   **Pioneering Futuristic AI & Strong AI Concepts:** Committing to fundamental Research and Development (R&D) and integrating experimental AI models that approach Artificial General Intelligence (AGI).
--   **Intelligent Agent Development & Orchestration:** Building "Agentic AI" solutions—autonomous entities capable of multi-step tasks, long-term planning, and complex decision-making.
--   **AI Data Strategy & Management:** Architecting sophisticated data pipelines, managing embeddings, and building advanced vector stores to create dynamic knowledge graphs and contextual reasoning engines.
--   **Full-Stack AI Deployment & MLOps:** Establishing cutting-edge MLOps practices for deploying, monitoring, and maintaining autonomous AI systems in production.
+- **Custom Generative AI Application Development:** Engineering bespoke GenAI solutions that are highly specialized and deeply integrated, using custom fine-tuning and proprietary data strategies.
+- **Pioneering Futuristic AI & Strong AI Concepts:** Committing to fundamental Research and Development (R&D) and integrating experimental AI models that approach Artificial General Intelligence (AGI).
+- **Intelligent Agent Development & Orchestration:** Building "Agentic AI" solutions—autonomous entities capable of multi-step tasks, long-term planning, and complex decision-making.
+- **AI Data Strategy & Management:** Architecting sophisticated data pipelines, managing embeddings, and building advanced vector stores to create dynamic knowledge graphs and contextual reasoning engines.
+- **Full-Stack AI Deployment & MLOps:** Establishing cutting-edge MLOps practices for deploying, monitoring, and maintaining autonomous AI systems in production.
 
 ### Key Project Initiatives
 
 The document provides illustrative examples of the company's capabilities:
 
--   **Autonomous Cognitive Assistant for Strategic Enterprise Decision-Making:** A system to transform corporate strategy by providing real-time, synthesized insights and predictive analysis to augment executive decision-making.
--   **Proactive & Self-Healing Cyber-Defense Agent Network:** A project to create a self-healing cybersecurity system that autonomously detects anomalies, predicts threats, and deploys real-time countermeasures.
--   **AI-Powered Personal Research & Knowledge Synthesis Engine:** An advanced RAG system combined with a knowledge graph to act as an intelligent research assistant, synthesizing information across multiple sources.
+- **Autonomous Cognitive Assistant for Strategic Enterprise Decision-Making:** A system to transform corporate strategy by providing real-time, synthesized insights and predictive analysis to augment executive decision-making.
+- **Proactive & Self-Healing Cyber-Defense Agent Network:** A project to create a self-healing cybersecurity system that autonomously detects anomalies, predicts threats, and deploys real-time countermeasures.
+- **AI-Powered Personal Research & Knowledge Synthesis Engine:** An advanced RAG system combined with a knowledge graph to act as an intelligent research assistant, synthesizing information across multiple sources.
 
 ### Business Model & Financials
 
